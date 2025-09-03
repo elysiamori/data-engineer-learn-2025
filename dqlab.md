@@ -60,21 +60,21 @@ uncleaned_raw['Quantity'] = uncleaned_raw['Quantity'].fillna(uncleaned_raw['Quan
   >  
   > ```python
   > import pandas as pd
-  >   df = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/datacovid19.csv")
-  >   print("Ukuran awal df: %d baris, %d kolom." % df.shape)
+  > df = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/datacovid19.csv")
+  > print("Ukuran awal df: %d baris, %d kolom." % df.shape)
   > # Drop kolom yang seluruhnya missing value dan cetak ukurannya
-  >   df = df.dropna(axis=1, how="all")
-  >   print("Ukuran df setelah buang kolom dengan seluruh data missing: %d baris, %d kolom." % df.shape)
+  > df = df.dropna(axis=1, how="all")
+  > print("Ukuran df setelah buang kolom dengan seluruh data missing: %d baris, %d kolom." % df.shape)
   ># Drop baris jika ada satu saja data yang missing dan cetak ukurannya
-  >   df = df.dropna(axis=0, how="any")
-  >   print("Ukuran df setelah dibuang baris yang memiliki sekurangnya 1 missing value: %d baris, %d kolom." % df.shape)
+  > df = df.dropna(axis=0, how="any")
+  > print("Ukuran df setelah dibuang baris yang memiliki sekurangnya 1 missing value: %d baris, %d kolom." % df.shape)
   > ```
   > ##### Treatment 2 : Change Value
   > ```py
   > import pandas as pd
-  >   df = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/datacovid19.csv")
-  >   print("Unique value awal:\n", df["province_state"].unique())
-  >   df["province_state"] = df["province_state"].fillna("unknown")
+  > df = pd.read_csv("https://storage.googleapis.com/dqlab-dataset/datacovid19.csv")
+  > print("Unique value awal:\n", df["province_state"].unique())
+  >df["province_state"] = df["province_state"].fillna("unknown")
   > print("Unique value setelah fillna:\n", df["province_state"].unique())
 
 
